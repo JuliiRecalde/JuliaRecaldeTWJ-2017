@@ -21,4 +21,48 @@ var usuario = {
     apellido: "recalde",
     direccion: "dfhgdf"
 };
-console.log("Hola mundo");
+/*
+class persona{
+    nombre:string="Usuario"; //publico por defecto
+    private apellido:string;
+    public fechaNacimiento:Date;
+    constructor(nombre:string,
+                apellido:string,
+                fechaNacimiento?:Date){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+}
+*/
+var Persona = (function () {
+    function Persona(nombre, apellido, fechaNacimiento) {
+        this.nombre = "Usuario"; //publico por defecto
+    }
+    Persona.prototype.imprimirPersona = function () {
+        console.log(this.nombre, this.apellido);
+        return {
+            nombre: this.nombre,
+            apellido: this.apellido
+        };
+    };
+    Persona.prototype.imprimirNombre = function (nombre, apellido) {
+        if (apellido) {
+            console.log(nombre, apellido);
+        }
+        else {
+            console.log(nombre);
+        }
+    };
+    return Persona;
+}());
+function SumarNomberos(numero1, numero2) {
+    return numero1 + numero2;
+}
+var julia = new Persona();
+console.log(julia.nombre, julia.apellido, julia.fechaNacimiento);
+julia.nombre = "Julia";
+julia.apellido = "Recalde";
+julia.fechaNacimiento = new Date(12 - 01 - 1993);
+//console.log(julia.nombre, julia.apellido, julia.fechaNacimiento);
+julia.imprimirPersona();

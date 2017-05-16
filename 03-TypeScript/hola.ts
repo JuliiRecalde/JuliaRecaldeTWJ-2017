@@ -52,19 +52,47 @@ class persona{
 }
 */
 
-class persona{
+class Persona{
     nombre:string="Usuario"; //publico por defecto
-    private apellido:string;
+    apellido:string;
     public fechaNacimiento:Date;
-    constructor(nombre:string,
-                apellido:string,
+    constructor(nombre?:string,
+                apellido?:string,
                 fechaNacimiento?:Date){
     }
-    imprimirPersona(){
-        console.log(this.fechaNacimiento);
+    imprimirPersona():UsuarioLogin{
+        console.log(this.nombre, this.apellido);
+        return{
+            nombre:this.nombre,
+            apellido:this.apellido
+        }
+    }
+
+    imprimirNombre (nombre:string, apellido:string):void{
+
+        if(apellido){
+            console.log(nombre, apellido);
+
+        }else{
+            console.log(nombre);
+        }
     }
 }
 
 
+function SumarNomberos(numero1:number, numero2:number):number{
+    return numero1+numero2;
+}
 
-console.log ("Hola mundo");
+
+
+let julia:Persona = new Persona();
+console.log(julia.nombre, julia.apellido, julia.fechaNacimiento);
+
+
+julia.nombre="Julia";
+julia.apellido="Recalde";
+julia.fechaNacimiento= new Date(12-01-1993);
+//console.log(julia.nombre, julia.apellido, julia.fechaNacimiento);
+
+julia.imprimirPersona();
