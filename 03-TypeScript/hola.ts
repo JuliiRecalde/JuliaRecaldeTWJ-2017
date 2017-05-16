@@ -29,11 +29,13 @@ nombre=12;
 //interface
 let usuario ={
     nombre:"julia",
-    apellido:"recalde"
+    apellido:"recalde",
+    direccion:"dfhgdf"
 }
 interface UsuarioLogin{
     nombre:string,
-    apellido:string
+    apellido:string,
+    direccion?:string
 }
 
 console.log ("Hola mundo");
