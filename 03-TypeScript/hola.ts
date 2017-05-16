@@ -37,5 +37,34 @@ interface UsuarioLogin{
     apellido:string,
     direccion?:string
 }
+/*
+class persona{
+    nombre:string="Usuario"; //publico por defecto
+    private apellido:string;
+    public fechaNacimiento:Date;
+    constructor(nombre:string,
+                apellido:string,
+                fechaNacimiento?:Date){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+}
+*/
+
+class persona{
+    nombre:string="Usuario"; //publico por defecto
+    private apellido:string;
+    public fechaNacimiento:Date;
+    constructor(nombre:string,
+                apellido:string,
+                fechaNacimiento?:Date){
+    }
+    imprimirPersona(){
+        console.log(this.fechaNacimiento);
+    }
+}
+
+
 
 console.log ("Hola mundo");
