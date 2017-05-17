@@ -12,6 +12,7 @@ export class AppComponent {
   }
 
   url:string="https://angular.io/";
+  src:string="https://g00glen00b.be/wp-content/uploads/2016/11/angular.png";
 
   constructor(){
     console.log("constructor");

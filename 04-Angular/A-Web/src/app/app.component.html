@@ -10,9 +10,9 @@
 <!--  <h3> {{usuario.nombre + "  " +  usuario.apellido}}</h3>-->
 <h3> {{usuario.nombre + usuario.apellido}}</h3>
 
-
-<a href={{url}}>
-  <img src ="https://g00glen00b.be/wp-content/uploads/2016/11/angular.png" alt="Logo angular">
+<!-- NO ES LA MEJOR FORMA DE USAR    <a href={{url}}>-->
+<a [href]="url">
+  <img [src] = "src"  alt="Logo angular">
 </a>
 
 
