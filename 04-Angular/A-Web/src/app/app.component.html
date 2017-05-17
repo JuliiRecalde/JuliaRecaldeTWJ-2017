@@ -1,3 +1,11 @@
 <h1> Mi primer aplicacion angular </h1>
 
 <p> Gracias or visitarnos </p>
+
+<!-- // {{}} metodos y propiedades dentro del componente-->
+<h3> Desarrollado por {{saludar(usuario.nombre, usuario.apellido)}}</h3>
+
+<!-- NO SE DEBE DECLARAR ASI -->
+<!--  <h3> {{usuario.nombre ,  usuario.apellido}}</h3>-->
+<!--  <h3> {{usuario.nombre + "  " +  usuario.apellido}}</h3>-->
+<h3> {{usuario.nombre + usuario.apellido}}</h3>
