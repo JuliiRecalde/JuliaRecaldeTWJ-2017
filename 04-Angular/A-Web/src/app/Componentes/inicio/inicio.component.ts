@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
+  src:string="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-social-logo.png";
+
   constructor() { }
 
   ngOnInit() {
