@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
+  nombre:string ="Julia";
+
   constructor() { }
 
   ngOnInit() {
   }
+  cambiarNombre():void {
+    console.log("Entro");
+    this.nombre = "Rafico a lenin";
+  }
+    cambiarOtroNombre(){
+    this.nombre ="Lenin a Rafico";
+    }
+
+
 
 }
