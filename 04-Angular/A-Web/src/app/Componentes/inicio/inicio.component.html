@@ -5,12 +5,10 @@
 
   <!--
   <input placeholder="Ingrese Texto" type="text" [value]="nombre" #nombreEtiqueta>
-  -->
 
 
 
-
-  <!--Banana box model-->
+  <!--Banana box model
 
   <input placeholder="Ingrese Texto" type="text" [(ngModel)]="nombre" >
   {{nombre}}
@@ -19,6 +17,32 @@
   <button class="btn btn-primary" (click)="cambiarNombre()">Cambiar valor</button>
   <button (blur)="cambiarOtroNombre()">Clickeame</button>
   <h1 (click)="cambiarNombreInput(nombreEtiqueta)">Lenin a Rafico</h1>
+  -->
+
+
+
+
+  <h1>Bienvenidos</h1>
+  <h2>Usuarios Conectados</h2>
+
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let usuario of arregloUsuarios">
+      <div class="card" style="width: 20rem;">
+        <div class="card-block">
+          <h4 class="card-title">{{usuario.nombre}}</h4>
+          <p class="card-text">{{usuario.nombre}} + {{usuario.apellido}}</p>
+          <a href="#" class="btn btn-primary btn-block">GIr a perfil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let usuario of arregloUsuarios">
+    <ul>
+      <li>{{usuario.nombre}} </li>
+    </ul>
+  </div>
+
 
 
 
