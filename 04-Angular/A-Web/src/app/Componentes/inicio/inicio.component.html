@@ -2,12 +2,23 @@
 
 
 <div class="container">
-  <input type="text" [value]="nombre">
+
+  <!--
+  <input placeholder="Ingrese Texto" type="text" [value]="nombre" #nombreEtiqueta>
+  -->
+
+
+
+
+  <!--Banana box model-->
+
+  <input placeholder="Ingrese Texto" type="text" [(ngModel)]="nombre" >
   {{nombre}}
+  <img [src]="nombre" alt="">
   <br>
   <button class="btn btn-primary" (click)="cambiarNombre()">Cambiar valor</button>
   <button (blur)="cambiarOtroNombre()">Clickeame</button>
-  <h1 (click)="cambiarOtroNombre()">Lenin a Rafico</h1>
+  <h1 (click)="cambiarNombreInput(nombreEtiqueta)">Lenin a Rafico</h1>
 
 
 

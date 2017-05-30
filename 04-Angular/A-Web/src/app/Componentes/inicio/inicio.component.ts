@@ -17,9 +17,16 @@ export class InicioComponent implements OnInit {
     console.log("Entro");
     this.nombre = "Rafico a lenin";
   }
-    cambiarOtroNombre(){
+  cambiarOtroNombre(){
     this.nombre ="Lenin a Rafico";
-    }
+  }
+
+  cambiarNombreInput(nombreEtiqueta){
+    console.log(nombreEtiqueta.value);
+    console.log(nombreEtiqueta.type);
+    console.log(nombreEtiqueta.placeholder);
+    this.nombre=nombreEtiqueta.value;
+  }
 
 
 
