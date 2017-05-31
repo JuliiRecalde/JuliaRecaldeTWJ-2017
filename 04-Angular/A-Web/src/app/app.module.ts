@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { EstiloComponent } from './estilo/estilo.component';
 import { InicioComponent } from './Componentes/inicio/inicio.component';
+import { PaginaComponent } from './Componentes/pagina/pagina.component';
 
 
 
@@ -13,7 +14,8 @@ import { InicioComponent } from './Componentes/inicio/inicio.component';
   declarations: [
     AppComponent,
     EstiloComponent,
-    InicioComponent
+    InicioComponent,
+    PaginaComponent
   ],
   imports: [
     BrowserModule,
