@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-inicio',
@@ -7,11 +7,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  src:string="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-social-logo.png";
+  nombre: string = "Julia";
+  arregloUsuarios = [{
+    nombre: "Julia",
+    apellido: "Recalde",
+    conectado:true
+  }, {
+    nombre: "Juan",
+    apellido: "Perez",
+    conectado:true
+  }, {
+    nombre: "Carlos",
+    apellido: "Lopez",
+    conectado:false
+  }]
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
+  cambiarNombre(): void {
+    console.log("Entro");
+    this.nombre = "Rafico a lenin";
+  }
+
+  cambiarOtroNombre() {
+    this.nombre = "Lenin a Rafico";
+  }
+
+  cambiarNombreInput(nombreEtiqueta) {
+    console.log(nombreEtiqueta.value);
+    console.log(nombreEtiqueta.type);
+    console.log(nombreEtiqueta.placeholder);
+    this.nombre = nombreEtiqueta.value;
+  }
+
 
 }
