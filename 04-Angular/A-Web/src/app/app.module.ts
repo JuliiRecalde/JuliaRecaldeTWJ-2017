@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { EstiloComponent } from './estilo/estilo.component';
 import { InicioComponent } from './Componentes/inicio/inicio.component';
 import { PaginaComponent } from './Componentes/pagina/pagina.component';
+import { PlanetasComponent } from './Componentes/planetas/planetas.component';
 
 
 
@@ -15,7 +16,8 @@ import { PaginaComponent } from './Componentes/pagina/pagina.component';
     AppComponent,
     EstiloComponent,
     InicioComponent,
-    PaginaComponent
+    PaginaComponent,
+    PlanetasComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,6 @@ import { PaginaComponent } from './Componentes/pagina/pagina.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [PaginaComponent]
+  bootstrap: [PlanetasComponent]
 })
 export class AppModule { }
