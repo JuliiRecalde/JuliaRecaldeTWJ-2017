@@ -2,9 +2,26 @@
   <div class="container">
   <h1>Bienvenidos</h1>
 
-  <h2>Usuarios Conectados</h2>
+  <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar planetas</button>
 
-  <div class="row">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let planeta of planetas; let i = index;">
+
+        <app-planeta-star-wars [planeta]="planeta" >
+
+        </app-planeta-star-wars>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+  <!--
+    <div class="row">
     <div class="" *ngFor="let usuario of arregloUsuarios">
       <div class="col-sm-4" *ngIf="usuario.conectado">
         <div class="card" style="width: 20rem;">
@@ -18,18 +35,6 @@
     </div>
   </div>
 
-
-  <h2>Planetas de Star Wars</h2>
-  <br>
-  <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar planetas</button>
-
-    <div class="row">
-      <div *ngFor="let planeta of planetas">
-        <h1>{{planeta.namw}}</h1>
-      </div>
-
-    </div>
-  <!--
     <div>
       <ul>
         <li *ngFor="let usuario of arregloUsuarios">{{usuario.nombre}}</li>

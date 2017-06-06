@@ -8,6 +8,8 @@ import { EstiloComponent } from './estilo/estilo.component';
 import { InicioComponent } from './Componentes/inicio/inicio.component';
 import { PaginaComponent } from './Componentes/pagina/pagina.component';
 import { PlanetasComponent } from './Componentes/planetas/planetas.component';
+import { BootsComponent } from './Componentes/boots/boots.component';
+import { PlanetaStarWarsComponent } from './Componentes/planeta-star-wars/planeta-star-wars.component';
 
 
 
@@ -17,7 +19,9 @@ import { PlanetasComponent } from './Componentes/planetas/planetas.component';
     EstiloComponent,
     InicioComponent,
     PaginaComponent,
-    PlanetasComponent
+    PlanetasComponent,
+    BootsComponent,
+    PlanetaStarWarsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,6 @@ import { PlanetasComponent } from './Componentes/planetas/planetas.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [PlanetasComponent]
+  bootstrap: [InicioComponent]
 })
 export class AppModule { }
