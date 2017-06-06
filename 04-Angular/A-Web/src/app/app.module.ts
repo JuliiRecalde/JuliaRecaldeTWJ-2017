@@ -23,6 +23,6 @@ import { PaginaComponent } from './Componentes/pagina/pagina.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [InicioComponent]
+  bootstrap: [PaginaComponent]
 })
 export class AppModule { }

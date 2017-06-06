@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Http} from "@angular/http";
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-inicio',
@@ -7,30 +9,47 @@ import {Component, OnInit} from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  nombre: string = "Julia";
-  arregloUsuarios = [{
-    nombre: "Julia",
-    apellido: "Recalde",
-    conectado:true
-  }, {
-    nombre: "Juan",
-    apellido: "Perez",
-    conectado:true
-  }, {
-    nombre: "Carlos",
-    apellido: "Lopez",
-    conectado:false
-  }]
+  nombre: string = "Adrian";
 
-  constructor() {
+  planetas=[];
+
+  //command + a  y luego command command+alt+l
+
+  arregloUsuarios = [
+    {
+      nombre: "Adrian",
+      apellido: "Eguez",
+      conectado:true
+    }, {
+      nombre: "Mashi",
+      apellido: "Correa",
+      conectado:true
+    }, {
+      nombre: "Abdala",
+      apellido: "Bucaram",
+      conectado:false
+    },{
+      nombre: "Juan Jose",
+      apellido: "Flores",
+      conectado:true
+    }
+  ]
+
+  constructor(private _http:Http) {
+  //inicia la clase
+    //pero el componente no esta listo!!!!!!!
   }
 
+
   ngOnInit() {
+    //esta listo el componente
   }
 
   cambiarNombre(): void {
     console.log("Entro");
-    this.nombre = "Rafico a lenin";
+
+    this.nombre = "Rafico a Lenin";
+
   }
 
   cambiarOtroNombre() {
@@ -41,8 +60,31 @@ export class InicioComponent implements OnInit {
     console.log(nombreEtiqueta.value);
     console.log(nombreEtiqueta.type);
     console.log(nombreEtiqueta.placeholder);
+
+
     this.nombre = nombreEtiqueta.value;
+
   }
 
+  cargarPlanetas(){
+    this._http
+      .get("http://swapi.co/api/planets")
+//      .map(response=>response.json())
+      .subscribe(
+        (response)=>{
+          console.log("Response: ", response);
+          console.log(response.json());
+          let respuesta =response.json();
+          console.log(respuesta.next_());
+          this.planetas=respuesta.result;
+        },
+        (error)=>{
+          console.log("Error: ", error);
+        },
+        ()=>{
+          console.log("Finally");
+        }
+      )
+  }
 
 }

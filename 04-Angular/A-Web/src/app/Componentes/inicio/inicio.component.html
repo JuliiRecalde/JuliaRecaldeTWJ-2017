@@ -1,120 +1,53 @@
 <div class="container">
-  <br><br>
+  <div class="container">
+  <h1>Bienvenidos</h1>
+
+  <h2>Usuarios Conectados</h2>
+
   <div class="row">
-    <div class="col-md-6">
-      <div style="font-size: small"
-           class="row">
-        <nav class="nav">
-          <a class="nav-link" href="#">Bootstrap</a>
-          <a class="nav-link" href="#">Documentation </a>
-          <a class="nav-link" href="#">Examples</a>
-          <a class="nav-link" href="#">Themes</a>
-          <a class="nav-link" href="#">Expo</a>
-          <a class="nav-link" href="#">Blog</a>
-        </nav>
+    <div class="" *ngFor="let usuario of arregloUsuarios">
+      <div class="col-sm-4" *ngIf="usuario.conectado">
+        <div class="card" style="width: 20rem;">
+          <div class="card-block">
+            <h4 class="card-title">{{usuario.nombre}} - {{usuario.conectado}}</h4>
+            <p class="card-text">{{usuario.nombre}} + {{usuario.apellido}}</p>
+            <a href="#" class="btn btn-primary btn-block">Ir a Perfil</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-6"></div>
-    <br>
-    <br>
-
-    <div align="center" style="background-color: #563d7c; color: white"
-         class="row-col-md-12">
-      <br><br><br><br>
-      <img src="https://www.apuntes-web.es/wp-content/uploads/2017/02/bootstrap.png" class="img-responsive"
-           alt="Logo Bootstrap">
-      <br><br>
-      <p style="font-size: xx-large">Bootstrap is the most popular HTML, CSS, and JS framework in the
-        world for building responsive, mobile-first projects on the web.
-        Download Bootstrap</p>
-      <br><br>
-      <button type="button" class="btn btn-outline-warning btn-lg">Download Bootstrap</button>
-      <br><br>
-      <p>Currently v4.0.0-alpha.6</p>
-      <br><br>
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <div align="center" class="row-col-md-12">
-      <h1>Easy to get started.</h1>
-      <br><br>
-      <h4>Quickly include Bootstrap's CSS and JS into any project. Use your favorite package manager, download the
-        source, or use the Bootstrap CDN.</h4>
-    </div>
-    <br>
-    <br>
-    <br>
-
-    <div class="row">
-      <div class="col-md-6">
-        <h3>Managed dependencies</h3>
-        <p>Include Bootstrap's source Sass and JavaScript files via Bower, Composer, Meteor, or npm. Package managed
-          installs don't include documentation, but do include our Gruntfile and readme</p>
-        <button type="button" class="btn btn-outline-primary">View install methods</button>
-      </div>
-      <div class="col-md-6">
-        <h3>Bootstrap CDN</h3>
-        <p>When you just need to include Bootstrap's compiled CSS and JS, use the Bootstrap CDN, free from the Max CDN
-          folks.</p>
-        <p>
-          <figure class="highlight">
-            <code class="language-html" data-lang="html">
-                <link rel="stylesheet"......
-            </code>
-          </figure>
-        </p>
-        <br>
-        <br>
-        <br>
-      </div>
-    </div>
-
-
-    <div align="center" class="row-col-md-12">
-      <strong>Looking for something else? </strong>Compiled builds of Bootstrap's CSS and JS are also available.
-      <br><br>
-      <p align="left">
-        <button type="button" class="btn btn-outline-primary">View install methods</button>
-      </p>
-    </div>
-
   </div>
 
-  <br><br><br>
+
+  <h2>Planetas de Star Wars</h2>
+  <br>
+  <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar planetas</button>
+
+    <div class="row">
+      <div *ngFor="let planeta of planetas">
+        <h1>{{planeta.namw}}</h1>
+      </div>
+
+    </div>
+  <!--
+    <div>
+      <ul>
+        <li *ngFor="let usuario of arregloUsuarios">{{usuario.nombre}}</li>
+      </ul>
+    </div>
+
+
+    <p *ngIf="true">TRUE</p>
+
+  <p *ngIf="false">FALSE</p>
+
+  <p *ngIf="undefined">UNDEFINED</p>
+
+  <p *ngIf="null">NULL</p>
+  <p *ngIf="0">CERO</p>
+  <p *ngIf="nombre">NOMBRE</p>
+  -->
+
 
 </div>
-
-
-<!-- ejemplos de emmet
-
-<p class="rojo"></p>
-<p id="verde"></p>
-<div class="verde"></div>
-
-<img src="" alt="" class="imagen-responsive">
-<img src="" alt="" class="imagen-responsive">
-
-<h1><a href=""></a></h1>
-
-<ol>
-  <li4></li4>
-  <li4></li4>
-  <li4></li4>
-  <li4></li4>
-</ol>
-
-
-<h2 class="clase1 clase2 clase3"></h2>
-
-<div class="fila">
-  <div class="columna"></div>
-  <div class="columna"></div>
-  <h1></h1>
 </div>
-
--->
-
-
