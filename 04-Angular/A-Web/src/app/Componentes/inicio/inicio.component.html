@@ -8,8 +8,16 @@
       <div class="col-sm-4" *ngFor="let planeta of planetas; let i = index;">
 
         <app-planeta-star-wars [planeta]="planeta" >
-
         </app-planeta-star-wars>
+
+        <app-diametro-psw [planeta]="planeta">
+        </app-diametro-psw>
+
+        <app-clima-psw [planeta]="planeta">
+        </app-clima-psw>
+
+        
+
 
       </div>
 

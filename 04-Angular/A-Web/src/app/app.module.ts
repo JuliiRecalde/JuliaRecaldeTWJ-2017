@@ -10,6 +10,11 @@ import { PaginaComponent } from './Componentes/pagina/pagina.component';
 import { PlanetasComponent } from './Componentes/planetas/planetas.component';
 import { BootsComponent } from './Componentes/boots/boots.component';
 import { PlanetaStarWarsComponent } from './Componentes/planeta-star-wars/planeta-star-wars.component';
+import { DiametroPSWComponent } from './Componentes/diametro-psw/diametro-psw.component';
+import { ClimaPSWComponent } from './Componentes/clima-psw/clima-psw.component';
+import { GravedadPSWComponent } from './Componentes/gravedad-psw/gravedad-psw.component';
+import { TerrenoPSWComponent } from './Componentes/terreno-psw/terreno-psw.component';
+import { PoblacionPSWComponent } from './Componentes/poblacion-psw/poblacion-psw.component';
 
 
 
@@ -21,7 +26,12 @@ import { PlanetaStarWarsComponent } from './Componentes/planeta-star-wars/planet
     PaginaComponent,
     PlanetasComponent,
     BootsComponent,
-    PlanetaStarWarsComponent
+    PlanetaStarWarsComponent,
+    DiametroPSWComponent,
+    ClimaPSWComponent,
+    GravedadPSWComponent,
+    TerrenoPSWComponent,
+    PoblacionPSWComponent
   ],
   imports: [
     BrowserModule,
