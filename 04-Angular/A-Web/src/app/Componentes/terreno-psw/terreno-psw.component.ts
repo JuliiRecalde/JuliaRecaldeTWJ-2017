@@ -8,7 +8,7 @@ import {PlanetasStarWars} from "../../Interfaces/PlanetaStarWars";
 })
 export class TerrenoPSWComponent implements OnInit {
 
-  @Input() planetas:PlanetasStarWars;
+  @Input() terreno:string;
   constructor() { }
 
   ngOnInit() {

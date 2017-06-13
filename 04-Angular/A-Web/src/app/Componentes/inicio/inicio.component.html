@@ -1,52 +1,65 @@
 <div class="container">
-  <div class="container">
   <h1>Bienvenidos</h1>
-    <h2>Usuarios</h2>
+  <br>
+  <h2>Usuarios</h2>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="from-group">
-
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="from-group">
           <pre>
             {{nuevoUsuario | json}}
           </pre>
-
-          <label class="col-from-label">Text
-          </label>
-          <input class="from-control"
-                 placeholder="Ingrese nuevo nombre"
-                 [(ngModel)]="nuevoUsuario.nombre" type="text">
-        </div>
-        <button class="btn btn-success" (click)="crearUsuario()">Crear usuarios</button>
+        <label class="col-from-label">Nombre Usuario</label>
+        <input class="from-control"
+               placeholder="Ingrese nuevo nombre"
+               [(ngModel)]="nuevoUsuario.nombre" type="text">
       </div>
+      <button class="btn btn-success" (click)="crearUsuario()" >Crear usuarios</button>
     </div>
+  </div>
+  <br>
 
-    <h2>Planetas</h2>
+  <h3>Usuarios:</h3>
+  <br>
+
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let usuario of usuarios;let indice = index;">
+      <h3>{{indice}}- {{usuario.nombre}}</h3>
+      <button class="btn btn-danger" (click)="eliminarUsuario(usuario,indice)"> Eliminar usuario</button>
+    </div>
+  </div>
+  <br><br><br>
+
+
+  <h2>Planetas</h2>
 
   <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar planetas</button>
 
-    <div class="row">
-      <div class="col-sm-4" *ngFor="let planeta of planetas; let i = index;">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let planeta of planetas; let i = index;">
 
-        <app-planeta-star-wars [planeta]="planeta" >
-        </app-planeta-star-wars>
+      <app-planeta-star-wars [planeta]="planeta">
+      </app-planeta-star-wars>
 
-        <app-diametro-psw [planeta]="planeta">
-        </app-diametro-psw>
+      <app-diametro-psw [planeta]="planeta">
+      </app-diametro-psw>
 
-        <app-clima-psw [planeta]="planeta">
-        </app-clima-psw>
+      <app-clima-psw [planeta]="planeta">
+      </app-clima-psw>
+
+      <app-poblacion-psw [planeta]="planeta">
+      </app-poblacion-psw>
+
+      <app-gravedad-psw [planeta]="planeta">
+      </app-gravedad-psw>
+
+      <app-terreno-psw [terreno]="planeta.terrain"></app-terreno-psw>
 
 
-
-
-      </div>
 
     </div>
 
-
-
-
+  </div>
 
 
   <!--
@@ -63,25 +76,18 @@
       </div>
     </div>
   </div>
-
     <div>
       <ul>
         <li *ngFor="let usuario of arregloUsuarios">{{usuario.nombre}}</li>
       </ul>
     </div>
-
-
     <p *ngIf="true">TRUE</p>
-
   <p *ngIf="false">FALSE</p>
-
   <p *ngIf="undefined">UNDEFINED</p>
-
   <p *ngIf="null">NULL</p>
   <p *ngIf="0">CERO</p>
   <p *ngIf="nombre">NOMBRE</p>
   -->
 
 
-</div>
 </div>
