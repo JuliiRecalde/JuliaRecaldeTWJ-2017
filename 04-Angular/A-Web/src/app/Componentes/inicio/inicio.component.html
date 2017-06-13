@@ -5,13 +5,10 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="from-group">
-
           <pre>
             {{nuevoUsuario | json}}
           </pre>
-
-        <label class="col-from-label">Nombre Usuario
-        </label>
+        <label class="col-from-label">Nombre Usuario</label>
         <input class="from-control"
                placeholder="Ingrese nuevo nombre"
                [(ngModel)]="nuevoUsuario.nombre" type="text">
@@ -24,7 +21,7 @@
 
   <div class="row">
     <div class="col-sm-3" *ngFor="let usuario of usuarios;let indice = index;">
-      <h3>{{usuario.nombre}}</h3>
+      <h3>{{indice}}- {{usuario.nombre}}</h3>
       <button class="btn btn-danger" (click)="eliminarUsuario(usuario,indice)"> Eliminar usuario</button>
     </div>
   </div>

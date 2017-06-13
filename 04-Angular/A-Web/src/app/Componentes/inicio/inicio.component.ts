@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {PlanetasStarWars} from "../../Interfaces/PlanetaStarWars";
-import {UsuarioClass} from "../../Clases/UsuarioClase";
+import {UsuarioClass} from "../../Clases/UsuarioClass";
 
 @Component({
   selector: 'app-inicio',
@@ -11,30 +11,74 @@ import {UsuarioClass} from "../../Clases/UsuarioClase";
 })
 export class InicioComponent implements OnInit {
 
-  usuario:UsuarioClass[]=[];
+  nombre: string = "Julia";
 
-  nuevoUsuario:UsuarioClass= new UsuarioClass();
+  usuarios: UsuarioClass[] = [];
 
-  planetas: PlanetasStarWars[]=[];
+  nuevoUsuario: UsuarioClass = new UsuarioClass("");
+
+  planetas: PlanetasStarWars[] = [];
   //planetas2:Array<PlanetasStarWars>=[];
 
+  arregloUsuarios = [
+    {
+      nombre: "Adrian",
+      apellido: "Eguez",
+      conectado: true
+    }, {
+      nombre: "Mashi",
+      apellido: "Correa",
+      conectado: true
+    }, {
+      nombre: "Abdala",
+      apellido: "Bucaram",
+      conectado: false
+    }, {
+      nombre: "Juan Jose",
+      apellido: "Flores",
+      conectado: true
+    }]
 
 
   constructor(private _http: Http) {
+    //Inicia la clase
+    //PERO EL COMPONENTE NO ESTA LISTO!!!!
   }
 
   ngOnInit() {
-    this._http.get("http://localhost:1337/Usuario")
+    //Esta listo el componente
+
+    this._http
+      .get("http://localhost:1337/Usuario/")
       .subscribe(
-        respuesta=>{
-          let rjson:UsuarioClass[] = respuesta.json();
-          this.usuario=rjson;
-          console.log("Usuarios ", this.usuario);
+        respuesta => {
+          let rjson: UsuarioClass[] = respuesta.json();
+
+          this.usuarios = rjson;
+
+          console.log("Usuarios: ", this.usuarios);
         },
-        error=>{
-          console.log("Error ", error)
+        error => {
+          console.log("Error: ", error)
+
         }
       )
+  }
+
+  cambiarNombre(): void {
+    console.log("Entro");
+    this.nombre = "Rafico a Lenin";
+  }
+
+  cambiarOtroNombre() {
+    this.nombre = "Lenin a Rafico";
+  }
+
+  cambiarNombreInput(nombreEtiqueta) {
+    console.log(nombreEtiqueta.value);
+    console.log(nombreEtiqueta.type);
+    console.log(nombreEtiqueta.placeholder);
+    this.nombre = nombreEtiqueta.value;
   }
 
   cargarPlanetas() {
@@ -49,9 +93,9 @@ export class InicioComponent implements OnInit {
           console.log(respuesta.next);
           this.planetas = respuesta.results;
 
-          this.planetas=this.planetas.map(
-            (planeta)=>{
-              planeta.imagenURL="/assets/imagenes"+planeta.name+'.jpg';
+          this.planetas = this.planetas.map(
+            (planeta) => {
+              planeta.imagenURL = "/assets/imagenes" + planeta.name + '.jpg';
               return planeta;
             }
           )
@@ -66,26 +110,55 @@ export class InicioComponent implements OnInit {
   }
 
   crearUsuario(){
-    console.log("Entro a crear usuario");
+    console.log("Entro a crear Usuario");
     /*
-    let usuario:UsuarioClass={
-      nombre:this.nuevoUsuario.nombre
-    }
-    */
-    this._http.post("http://localhost:1337/Usuario", this.usuario)
+     let usuario = {
+     nombre:this.nuevoUsuario.nombre
+     };
+     */
+
+    this._http
+      .post("http://localhost:1337/Usuario",this.nuevoUsuario)
       .subscribe(
         respuesta=>{
-          let respuestaJson =respuesta.json();
-          console.log("respuestaJson: ", respuestaJson)
+          let respuestaJson = respuesta.json();
+          console.log('respuestaJson: ',respuestaJson);
         },
         error=>{
-          console.log("error", error)
+          console.log("Error",error);
         }
       )
+
   }
 
+  eliminarUsuario(usuario:UsuarioClass,indice:number){
+
+    console.log("Indice:",this.usuarios.indexOf(usuario));
+
+    console.log("Indice con index: ",indice);
+
+    this._http.delete('http://localhost:1337/Usuario/${usuario.id}')
+      .subscribe(
+        respuesta => {
+          console.log('Indice con index: ', usuario.id);
+
+        },
+        error => {
+          console.log('Error', error);
+        }
+      );
+
+  }
 
 }
+
+
+
+
+
+
+
+
 
 
 
