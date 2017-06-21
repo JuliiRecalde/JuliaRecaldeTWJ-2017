@@ -1,0 +1,45 @@
+<div style=" padding: 0px; margin: 0px; width: 100%; background-image:url(https://i.ytimg.com/vi/Q-hj0jQ_MUw/maxresdefault.jpg);" align="center"
+     class="container">
+
+  <div align="center" class="row-col-md-12">
+    <br>
+    <img align="center" src="http://www.fontspace.com/preview/m/0a86c8337156c989f1195bd3c753e12f.png"
+         class="img-responsive" alt="Planetas de StarWars"
+         style="width: auto; min-width: 40%; max-width: 80%; height: auto">
+    <br><br>
+  </div>
+
+  <div align="center" class="row-col-md-12">
+    <button class="btn btn-outline-success" (click)="cargarPlanetas()">Cargar planetas</button>
+    <br><br><br>
+  </div>
+
+
+  <div style="padding: 0px;margin: 0px"  class="row">
+    <div *ngFor="let planeta of planetas; let indice=index">
+      <div align="center"  class="col-sm-4">
+        <div class="card" style="width: 20rem; height: 20rem">
+          <div style="color: white; background-color: rgba(0,0,0,.99); border-style: double; border-color: red" class="card-block">
+            <h4 style="color: white" class="card-title">{{indice}}- {{planeta.name}}
+              </h4>
+            <img [src]="planeta.imagenURL" alt="planeta">
+            <p align="left" class="card-text">
+              <b>Periodo de rotacion:&nbsp;&nbsp; </b>{{planeta.rotation_period}}<br>
+              <b>Periodo Orbital:&nbsp;&nbsp;</b> {{planeta.orbital_period}}<br>
+              <b>Diametro:&nbsp;&nbsp;</b> {{planeta.diameter}}<br>
+              <b>Clima:&nbsp;&nbsp;</b>{{planeta.climate}}<br>
+              <b>Gravedad:&nbsp;&nbsp;</b> {{planeta.gravity}}<br>
+              <b>Terreno:&nbsp;&nbsp;</b> {{planeta.terrain}}<br>
+              <b>Superficie de agua:&nbsp;&nbsp;</b> {{planeta.surface_water}}<br>
+              <b>Población:&nbsp;&nbsp;</b> {{planeta.population}}<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br><br><br><br>
+
+</div>
+
