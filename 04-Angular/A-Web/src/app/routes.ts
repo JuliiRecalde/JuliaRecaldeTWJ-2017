@@ -11,29 +11,28 @@ import { Pagina23Component } from './Componentes/pagina23/pagina23.component';
 
 export const routes: Routes = [
   {
-    path: "inicio",
-    component: InicioComponent
+    path:"inicio",
+    component:InicioComponent
   },
   {
-    path: "pagina2",
-    component: Pagina2Component,
-    children: [
+    path:"pagina2/:idPagina2/pagina3/:idPagina3",
+    component:Pagina2Component,
+    children:[
       {
-        path: "pagina21",
-        component: Pagina21Component
-      },
-
-      {
-        path: "pagina22",
-        component: Pagina22Component
+        path:"pagina21/:idPartes",
+        component:Pagina21Component
       },
       {
-        path: "pagina23",
-        component: Pagina23Component
+        path:"pagina22/:idCompetencias",
+        component:Pagina22Component
+      },
+      {
+        path:"pagina23/:idDuenos",
+        component:Pagina23Component
       }
     ]
   }
-]
+];
 
 
 export const ModuloDeRutas: ModuleWithProviders = RouterModule.forRoot(routes);
