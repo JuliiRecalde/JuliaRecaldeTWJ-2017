@@ -1,3 +1,33 @@
+<h1>App Component</h1>
+
+<h3>Header</h3>
+<ul>
+  <li>
+    <a [routerLink]="['inicio']"> Inicio</a>
+  </li>
+  <li>
+    <a [routerLink]="['pagina2']">Pagina2</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+
+
+<h3>Footer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <h1> Mi primer aplicacion angular </h1>
 
 
@@ -29,17 +59,17 @@
 
 <p> Gracias por visitarnos </p>
 
-<!-- // {{}} metodos y propiedades dentro del componente,-->
-<h3> Desarrollado por {{saludar(usuario.nombre, usuario.apellido)}}</h3>
+<!-- // {{}} metodos y propiedades dentro del componente,
+<h3> Desarrollado por {{saludar(usuarioLocal.nombre, usuarioLocal.apellido)}}</h3>
 
 <!-- NO SE DEBE DECLARAR ASI  porque no se usa metodos al usar las dos llaves-->
-<!--  <h3> {{usuario.nombre ,  usuario.apellido}}</h3>-->
-<!--  <h3> {{usuario.nombre + "  " +  usuario.apellido}}</h3>-->
-<h3> {{usuario.nombre + usuario.apellido}}</h3>
+<!--  <h3usuarioLocalario.nombreusuarioLocalario.apellido}}</h3>-->
+<!--  <h3usuarioLocalario.nombre + "  "usuarioLocalario.apellido}}</h3>
+<h3> {{usuarioLocal.nombre + usuarioLocal.apellido}}</h3>
 
-<!-- NO ES LA MEJOR FORMA DE USAR    <a href={{url}}>-->
+<!-- NO ES LA MEJOR FORMA DE USAR    <a href={{url}}>-
 <a [href]="url">
   <img [src] = "src"  alt="Logo angular">
 </a>
 
-
+-->

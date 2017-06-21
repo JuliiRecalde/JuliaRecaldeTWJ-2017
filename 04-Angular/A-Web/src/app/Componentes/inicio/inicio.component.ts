@@ -56,7 +56,13 @@ export class InicioComponent implements OnInit {
         respuesta => {
           let rjson: UsuarioClass[] = respuesta.json();
 
-          this.usuarios = rjson;
+
+          this.usuarios = rjson.map(
+            (usuario:UsuarioClass)=>{
+              usuario.editar=false;
+              return usuario;
+            }
+          );
 
           console.log("Usuarios: ", this.usuarios);
         },
@@ -111,47 +117,35 @@ export class InicioComponent implements OnInit {
       )
   }
 
-  crearUsuario() {
+  crearUsuario(){
     console.log("Entro a crear Usuario");
-
+    /*
      let usuario = {
      nombre:this.nuevoUsuario.nombre
      };
-
+     */
 
     this._http
-      .post("http://localhost:1337/Usuario", this.nuevoUsuario)
+      .post("http://localhost:1337/Usuario",this.nuevoUsuario)
       .subscribe(
-        respuesta => {
-          let respuestaJson = respuesta.json();
-          console.log('respuestaJson: ', respuestaJson);
-          this.usuarios.push(respuestaJson)
+        respuesta=>{
+          let respuestaJson = respuesta.json()
+          this.usuarios.push(respuestaJson);
+          this.nuevoUsuario = new UsuarioClass();
+          console.log('respuestaJson: ',respuestaJson);
         },
-        error => {
-          console.log("Error", error);
+        error=>{
+          console.log("Error",error);
         }
       )
 
   }
 
-  eliminarUsuario(usuario: UsuarioClass, indice: number) {
+  eliminarUsuario(usuario:UsuarioClass){
 
-    console.log("Indice:", this.usuarios.indexOf(usuario));
-    console.log("Indice con index: ", indice);
-    console.log("Usuarios : ", this.usuarios);
-    console.log("Usuariofff : ", usuario.id);
+    let indice = this.usuarios.indexOf(usuario);
 
-
-    this._http.delete("http://localhost:1337/Usuario?id=" + usuario.id)
-      .subscribe(respuesta => {
-          this.usuarios.splice(indice, 1);
-          let respuestaJson = respuesta.json();
-          console.log('respuestaJsonoooooo: ', respuestaJson);
-        },
-        error => {
-          console.log("Error ", error)
-        }
-      )
+    this.usuarios.splice(indice,1);
 
   }
 

@@ -6,15 +6,14 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="from-group">
-          <pre>
-            {{nuevoUsuario | json}}
-          </pre>
-        <label class="col-from-label">Nombre Usuario</label>
-        <input class="from-control"
-               placeholder="Ingrese nuevo nombre"
+        <label class="col-form-label">Nombre Usuario:
+        </label>
+        <input class="form-control"
+               placeholder="Ingrese nuevo Nombre"
                [(ngModel)]="nuevoUsuario.nombre" type="text">
       </div>
-      <button class="btn btn-success" (click)="crearUsuario()" >Crear usuarios</button>
+
+      <button class="btn btn-success" (click)="crearUsuario()">Crear usuarios</button>
     </div>
   </div>
   <br>
@@ -23,11 +22,22 @@
   <br>
 
   <div class="row">
-    <div class="col-sm-3" *ngFor="let usuario of usuarios;let indice = index;">
-      <h3>{{indice}}- {{usuario.nombre}}</h3>
-      <button class="btn btn-danger" (click)="eliminarUsuario(usuario,indice)"> Eliminar usuario</button>
+    <div class="col-sm-6" *ngFor="let usuario of usuarios;let indice = index;">
+      <div class="margin-usuarios">
+
+        <app-usuario
+          [usuarioLocal]="usuario"
+          (usuarioborrado)="eliminarUsuario($event)"
+
+        ></app-usuario>
+
+
+
+      </div>
+
     </div>
   </div>
+
   <br><br><br>
 
 
@@ -56,7 +66,6 @@
       <app-terreno-psw [terreno]="planeta.terrain"></app-terreno-psw>
 
 
-
     </div>
 
   </div>
@@ -64,12 +73,12 @@
 
   <!--
     <div class="row">
-    <div class="" *ngFor="let usuario of arregloUsuarios">
-      <div class="col-sm-4" *ngIf="usuario.conectado">
+    <div class="" *ngFor="usuarioLocalario of arregloUsuarios">
+      <div class="col-sm-4" *ngusuarioLocalario.conectado">
         <div class="card" style="width: 20rem;">
           <div class="card-block">
-            <h4 class="card-title">{{usuario.nombre}} - {{usuario.conectado}}</h4>
-            <p class="card-text">{{usuario.nombre}} + {{usuario.apellido}}</p>
+            <h4 class="card-titleusuarioLocalario.nombre}} usuarioLocalario.conectado}}</h4>
+            <p class="card-textusuarioLocalario.nombre}} usuarioLocalario.apellido}}</p>
             <a href="#" class="btn btn-primary btn-block">Ir a Perfil</a>
           </div>
         </div>
@@ -78,7 +87,7 @@
   </div>
     <div>
       <ul>
-        <li *ngFor="let usuario of arregloUsuarios">{{usuario.nombre}}</li>
+        <li *ngFor="usuarioLocalario of arregloUsuariosusuarioLocalario.nombre}}</li>
       </ul>
     </div>
     <p *ngIf="true">TRUE</p>

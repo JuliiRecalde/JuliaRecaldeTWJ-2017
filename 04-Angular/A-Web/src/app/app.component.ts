@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  usuario:UsuarioInt ={
+  usuarioLocal:UsuarioInt ={
     nombre: "",
     apellido: "Recalde"
 
@@ -22,16 +22,16 @@ export class AppComponent {
     /*console.log("constructor");
     this.holaMundo();
     console.log(
-      this.saludar(this.usuario.nombre,
-        this.usuario.apellido
+      this.saludar(this.usuarioLocal.nombre,
+        this.usuarioLocal.apellido
       ));*/
 
 
-    this.usuario.nombre = "Patricia";
+    this.usuarioLocal.nombre = "Patricia";
     this.parrafo = "Mi mama me mima";
 
     setTimeout(()=>{
-      this.usuario.nombre = "Julia"
+      this.usuarioLocal.nombre = "Julia"
 
     },3000);
   }
